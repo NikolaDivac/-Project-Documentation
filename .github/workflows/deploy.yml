@@ -1,0 +1,14 @@
+name: Deploy Workflow
+
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Verwenden von Secrets
+        run: echo "Der geheime Schlüssel lautet ${{ secrets.API_KEY }}"
+
